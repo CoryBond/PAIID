@@ -12,6 +12,10 @@ ENGINE_NAME = "Dall-e"
 
 class DalleProvider(ImageProvider):
     """
+    NOTE: The dalle-3 model is deprecated and will be shutdown on May 12, 2026. Users are recommended to move to gpt-image-1 or gpt-image-1-mini.
+    TODO: Switch to gpt-image-1 or gpt-image-1-mini for the model. Replace the name of this provider.
+    STRETCH-GOAL: Have a way for users of the new "OpenAIProvider" to switch between OpenAPI existing models. Make the "default" model less static (or just use what is the default OpenAPI uses.)
+    
     Wrapper for calling the Dalle-3 API and getting images (as bytes from it).
 
     This is a waiting call so it should be threaded.
