@@ -7,21 +7,25 @@ from enum import Enum
 class PageName(str, Enum):
     HOME = "home"
     GALLERY = "gallery"
+    SETTINGS = "settings"
 
 
 class PageCaption(str, Enum):
     HOME = "Home"
     GALLERY = "Gallery"
+    SETTINGS = "Settings"
 
 
 class PageHint(str, Enum):
     HOME = "This Will Take You To The Home Page"
     GALLERY = "This Will Let You Load Previous Images"
+    SETTINGS = "This will change PAIID settings"
 
 
 PageDictType = TypedDict("PageDictType", {
     'home': QWidget,
     'gallery': QWidget,
+    'settings': QWidget,
 })
 
 
