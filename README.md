@@ -72,6 +72,7 @@ Featrues:
 Featrues:
 
 1. Ability to delete image on Home page. [✅]
+2. **Ver 2.1.1** Settings page (Changing wifi of device supported.) [✅]
 
 
 Bug Fixes:
@@ -138,7 +139,7 @@ in it though.
 ### Additional Package Installs
 
 Some packages, like speech_recognition, also require additional system specific packages if they don't already exist. You might have to install
-these manually prior to using PAIID.
+these manually on your device prior to using PAIID.
 For example:
 
 | System | Package | Install Command                      | Required By        |
@@ -154,7 +155,7 @@ For example:
 | Linux   | Flac    | sudo apt-get install flac            | speech_recognition |
 | Linux   | ESpeak  | sudo apt-get install espeak          | speech_recognition |
 
-And there maybe more beyond listed here. It depends on your system and if the existing libraries already are installed are not unfortunately. PyQt, being a wrapper around the c++ Qt, will need to have a lot of external dependencies installed.
+And maybe more beyond listed here. PyQt, being a wrapper around the c++ Qt, will need to have a lot of external dependencies installed.
 
 ### PiWheels
 
@@ -216,3 +217,11 @@ There is included a test package of pytests for various functions and classes us
 ### Dev UI
 
 There exists a test UI which uses mock APIs rather then real ones for dev purposes. Simply run the application in this mode run the openbox script with the t flag (ex: `startx ./tools/openBoxStarter.bash -t`)
+
+## 🐛 Bugs
+
+Some known bugs include:
+
+| Bug | Type | Description                      | Solution        |
+| ------ | ------- | ------------------------------------ | ------------------ |
+| Virtual Keyboard Not Functional With Inputs For Dialogs/Popups  | Functionality   | When using any QDialog based widgets that have a input for keyboards, the keyboard will load up but becomes un-interactable. This is apparently because QDialogs absorb all key events that would go anywhere other then the Dialog window.      | Currently no solution right now. Have to use a physical keyboard for interactions. There is discussion on this issue at https://qt-project.atlassian.net/browse/QTBUG-56918 which have a non-trivial solution             |
